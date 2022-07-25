@@ -1,9 +1,12 @@
 {
-  "name": "druxt-module-template",
+  "name": "@druxt-contrib/layout-builder",
   "version": "0.0.0",
   "keywords": [
     "druxt",
-    "module"
+    "drupal",
+    "layout builder",
+    "module",
+    "nuxt"
   ],
   "exports": {
     ".": {
