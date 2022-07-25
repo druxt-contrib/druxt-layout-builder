@@ -1,12 +1,12 @@
 {
     "uid": [
         {
-            "value": 1
+            "value": 0
         }
     ],
     "uuid": [
         {
-            "value": "ebfa7bc7-06a4-4954-994c-6c0a60fd7e7d"
+            "value": "74319fd0-7fac-4e5d-b0e4-daf79ad60b6c"
         }
     ],
     "langcode": [
@@ -22,43 +22,33 @@
     "preferred_admin_langcode": [],
     "name": [
         {
-            "value": "admin"
+            "value": ""
         }
     ],
-    "mail": [
-        {
-            "value": "admin@example.com"
-        }
-    ],
+    "mail": [],
     "timezone": [
         {
-            "value": "UTC"
+            "value": ""
         }
     ],
     "status": [
         {
-            "value": true
+            "value": false
         }
     ],
     "created": [
         {
-            "value": "2022-04-11T06:06:23+00:00",
+            "value": "2022-07-25T03:49:28+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2022-04-11T06:06:23+00:00",
+            "value": "2022-07-25T03:49:28+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
-    "roles": [
-        {
-            "target_id": "administrator",
-            "target_type": "user_role",
-            "target_uuid": "7c3d6384-1cc7-4e49-b651-cd9cd207ce20"
-        }
-    ],
+    "roles": [],
     "default_langcode": [
         {
             "value": true
