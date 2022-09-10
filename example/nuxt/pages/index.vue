@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <h1>Druxt Module component example</h1>
-    <DruxtModuleComponent />
-  </div>
+  <DruxtRouter path="/node/1">
+    <template #default="{ route }">
+      <DruxtEntity v-bind="route.props">
+        <template #default="{ entity }">
+          <DruxtLayoutBuilder :entity="entity" />
+        </template>
+      </DruxtEntity>
+    </template>
+  </DruxtRouter>
 </template>

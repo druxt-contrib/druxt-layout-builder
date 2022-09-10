@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "@druxt-contrib/layout-builder": "link:../..",
-    "druxt": "latest",
+    "druxt-entity": "latest",
+    "druxt-router": "latest",
     "nuxt": "latest"
   }
 }

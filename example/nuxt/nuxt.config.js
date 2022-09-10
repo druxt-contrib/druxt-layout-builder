@@ -4,7 +4,8 @@ const baseUrl = process.env.GITPOD_WORKSPACE_ID
 
 export default {
   buildModules: [
-    'druxt',
+    'druxt-entity',
+    'druxt-router/nuxt',
     '@druxt-contrib/layout-builder'
   ],
   druxt: { baseUrl }
