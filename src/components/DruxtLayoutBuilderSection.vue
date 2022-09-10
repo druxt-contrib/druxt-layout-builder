@@ -1,21 +1,25 @@
 <script>
 import DruxtModule from 'druxt/dist/components/DruxtModule.vue'
-// import { pascalCase, upperFirst } from 'scule'
 
 export default {
-  name: 'DruxtLayoutBuilder',
+  name: 'DruxtLayoutBuilderSection',
 
-  extends: DruxtModule,
+ extends: DruxtModule,
 
   props: {
     entity: {
+      type: Object,
+      required: true,
+    },
+
+    section: {
       type: Object,
       required: true,
     }
   },
 
   computed: {
-    sections: ({ entity }) => entity.attributes.layout_builder__layout
+    components: ({ section }) => section.components
   },
 
   druxt: {
@@ -23,8 +27,8 @@ export default {
      * @param {object} context - The module component ViewModel.
      * @returns {ComponentOptions}
      */
-    componentOptions: ({ entity }) => [
-      [entity.type],
+    componentOptions: ({ section }) => [
+      [section.layout_id],
       ['default'],
     ],
 
@@ -34,7 +38,7 @@ export default {
      * @param {object} context - The module component ViewModel.
      * @returns {PropsData}
      */
-    propsData: ({ entity, sections }) => ({ entity, sections }),
+    propsData: ({ entity, section }) => ({ entity, section }),
 
     /**
      * @return {ScopedSlots} The Scoped slots object.
@@ -42,16 +46,16 @@ export default {
     slots(h) {
       const slots = {}
 
-      this.sections.forEach((section, index) => {
-        slots[`section-${index}`] = () => h('DruxtLayoutBuilderSection', {
+      this.components.forEach((component, index) => {
+        slots[`component-${index}`] = () => h('DruxtLayoutBuilderComponent', {
           props: {
             entity: this.entity,
-            section,
+            item: component,
           }
         })
       })
 
-      slots.default = () => h('div', this.sections.map((section, index) => slots[`section-${index}`]()))
+      slots.default = () => h('div', this.components.map((component, index) => slots[`component-${index}`]()))
 
       return slots
     }
