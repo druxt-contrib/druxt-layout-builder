@@ -8,5 +8,6 @@ export default {
     'druxt-router/nuxt',
     '@druxt-contrib/layout-builder'
   ],
+  components: true,
   druxt: { baseUrl }
 }
