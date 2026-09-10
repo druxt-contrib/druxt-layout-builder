@@ -3,9 +3,6 @@ const baseUrl = process.env.GITPOD_WORKSPACE_ID
   : 'http://druxt-contrib-layout-builder.ddev.site'
 
 export default {
-  buildModules: [
-    'druxt',
-    '@druxt-contrib/layout-builder'
-  ],
-  druxt: { baseUrl }
+  buildModules: ['druxt', '@druxt-contrib/layout-builder'],
+  druxt: { baseUrl },
 }
