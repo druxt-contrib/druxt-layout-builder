@@ -4,6 +4,7 @@
 [![npm](https://badgen.net/npm/v/@druxt-contrib/layout-builder)](https://www.npmjs.com/package/@druxt-contrib/layout-builder)
 [![Known Vulnerabilities](https://snyk.io/test/github/druxt-contrib/druxt-layout-builder/badge.svg?targetFile=package.json)](https://snyk.io/test/github/druxt-contrib/druxt-layout-builder?targetFile=package.json)
 -->
+
 [![CI](https://github.com/druxt-contrib/druxt-layout-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/druxt-contrib/druxt-layout-builder/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/druxt-contrib/druxt-layout-builder/branch/main/graph/badge.svg?token=TwCLJOKEjm)](https://codecov.io/gh/druxt-contrib/druxt-layout-builder)
 
@@ -11,8 +12,8 @@
 
 ## Links
 
-- DruxtJS: https://druxtjs.org
-- Community Discord server: https://discord.druxtjs.org
+- [DruxtJS](https://druxtjs.org)
+- [Community Discord server](https://discord.druxtjs.org)
 
 <!-- TODO - Update this for your module
 
@@ -28,7 +29,7 @@ Add module to `nuxt.config.js`
 module.exports = {
   buildModules: ['@druxt-contrib/layout-builder'],
   druxt: {
-    baseUrl: 'https://demo-api.druxtjs.org'
+    baseUrl: 'https://cms.example.com'
   }
 }
 ```
