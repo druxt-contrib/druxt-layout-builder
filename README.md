@@ -7,12 +7,12 @@
 [![CI](https://github.com/druxt-contrib/druxt-layout-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/druxt-contrib/druxt-layout-builder/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/druxt-contrib/druxt-layout-builder/branch/main/graph/badge.svg?token=TwCLJOKEjm)](https://codecov.io/gh/druxt-contrib/druxt-layout-builder)
 
-> Druxt integration with the Druxt Layout Builder.
+> Layout Builder module for Druxt
 
 ## Links
 
-- DruxtJS: https://druxtjs.org
-- Community Discord server: https://discord.druxtjs.org
+- [DruxtJS](https://druxtjs.org)
+- [Community Discord server](https://discord.druxtjs.org)
 
 <!-- TODO - Update this for your module
 
