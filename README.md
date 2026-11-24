@@ -1,3 +1,10 @@
+<!-- vale off -->
+<!-- The alt text describes what the banner shows: the @druxt-contrib/layout-builder mark, name and description. The name-colon-description form trips ColonUsage. -->
+<a href="https://druxtjs.org">
+  <img src=".github/banner.svg" alt="@druxt-contrib/layout-builder: Layout Builder module for Druxt">
+</a>
+<!-- vale on -->
+
 # @druxt-contrib/layout-builder
 
 <!--
