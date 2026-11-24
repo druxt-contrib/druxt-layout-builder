@@ -1,7 +1,7 @@
 import NuxtModule from '../src'
 
 const options = {
-  baseUrl: 'https://demo-api.druxtjs.org',
+  baseUrl: 'https://cms.example.com',
   endpoint: '/jsonapi',
 }
 
@@ -17,7 +17,7 @@ describe('DruxtModule Nuxt module', () => {
         hook: jest.fn(),
       },
       options: {},
-      NuxtModule
+      NuxtModule,
     }
   })
 
@@ -32,7 +32,10 @@ describe('DruxtModule Nuxt module', () => {
     // Expect that:
     // - The components:dirs hook was invoked.
     // - One directory is present.
-    expect(mock.nuxt.hook).toHaveBeenCalledWith('components:dirs', expect.any(Function))
+    expect(mock.nuxt.hook).toHaveBeenCalledWith(
+      'components:dirs',
+      expect.any(Function)
+    )
     expect(dirs.length).toBe(1)
   })
 })
