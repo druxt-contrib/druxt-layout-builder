@@ -48,6 +48,8 @@ jobs:
 
       - run: yarn lint:md
 
+      - run: yarn lint:format
+
       - run: yarn lint:cspell
 
       - run: yarn lint:knip

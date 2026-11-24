@@ -15,9 +15,10 @@ name: 'CodeQL'
 on:
   push:
     branches: [develop]
+  # Every base branch, not only the release branch: ci.yml runs for a pull
+  # request into any base, and a stacked pull request targets another branch of
+  # this repository, where a filter here would skip the scan entirely.
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [develop]
   schedule:
     - cron: '15 5 * * 2'
 

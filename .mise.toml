@@ -13,7 +13,7 @@ node = "16.20.1"
 
 [tasks.install]
 description = "Install dependencies with the manager package.json declares"
-run = "corepack enable && corepack prepare --activate && npm ci"
+run = "corepack enable && corepack prepare --activate && yarn install --frozen-lockfile"
 
 [tasks.build]
 description = "Build the module with siroc"

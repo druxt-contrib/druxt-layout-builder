@@ -68,6 +68,16 @@ lint:md:
     - yarn lint:md
     - section_end "markdownlint"
 
+# package.json declares lint:format and nothing ran it, so a file could be
+# committed unformatted and only fail for the next person who ran prettier.
+lint:format:
+  extends: .node
+  stage: lint
+  script:
+    - section_start "prettier" "Checking formatting"
+    - yarn lint:format
+    - section_end "prettier"
+
 lint:cspell:
   extends: .node
   stage: lint
@@ -118,9 +128,12 @@ lint:yaml:
   variables:
     ACTIONLINT_VERSION: '1.7.12'
     ACTIONLINT_SHA256: '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8'
+    # Pinned, as actionlint below it already is. An unpinned install lets an
+    # upstream release change what this pipeline accepts with no commit here.
+    YAMLLINT_VERSION: '1.38.0'
   script:
     - section_start "yamllint" "Linting YAML"
-    - pip install --quiet yamllint
+    - pip install --quiet "yamllint==${YAMLLINT_VERSION}"
     - yamllint .gitlab-ci.yml .github/workflows/
     - section_end "yamllint"
     - section_start "actionlint" "Linting GitHub workflows"
@@ -138,11 +151,16 @@ lint:yaml:
 lint:commit:
   extends: .node
   stage: lint
+  # Full history, so the merge base is present and no commit is cut off.
+  # Deepening the target branch alone leaves the source shallow, and a commit
+  # outside that depth is then missing from the range commitlint reads.
+  variables:
+    GIT_DEPTH: 0
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
     - section_start "commitlint" "Validating commit messages"
-    - git fetch origin "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" --depth 50
+    - git fetch origin "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
     - yarn lint:commit -- --from "origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" --to HEAD --verbose
     - section_end "commitlint"
 
